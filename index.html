@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+
+    <title>E-Commerce Product Page | Frontend Mentor</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="menu-logo-container">
+            <img class="icon-menu" src="./images/icon-menu.svg" alt="Menu icon">
+            <div class="logo-and-nav-container">
+                <img class="logo" src="./images/logo.svg" alt="Logo">
+                <nav class="nav">
+                    <img class="icon-close" src="./images/icon-close.svg" alt="Close icon">
+                    <ul class="menu">
+                        <li class="nav-li"><a class="nav-link" href="coming-soon.html">Collections</a></li>
+                        <li class="nav-li"><a class="nav-link" href="coming-soon.html">Men</a></li>
+                        <li class="nav-li"><a class="nav-link" href="coming-soon.html">Women</a></li>
+                        <li class="nav-li"><a class="nav-link" href="coming-soon.html">About</a></li>
+                        <li class="nav-li"><a class="nav-link" href="coming-soon.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="cart-avatar-container">
+            <div class="icon-cart-header-container">
+                <img class="icon-cart-header" src="./images/icon-cart.svg" alt="Cart icon">
+                <span class="icon-cart-number">2</span>
+            </div>
+            <img class="image-avatar" src="./images/image-avatar.png" alt="Avatar image">
+        </div>
+        <div class="overlay">
+            <!-- Lightbox -->
+        </div>
+        <div class="cart-container">
+            <div class="cart-top">
+                <h2 class="top-title">Cart</h2>
+            </div>
+            <div class="cart-bottom">
+                <div class="empty-text-container">
+                    <p>Your cart is empty.</p>
+                </div>
+                <div class="cart-items-and-button-container">
+                    <div class="cart-items">
+                        <div class="thumbnail-and-text">
+                            <img class="cart-thumbnail" src="./images//image-product-1-thumbnail.jpg" alt="">
+                            <div class="shoe-name-and-price">
+                                <p class="shoe-name">Autumn Limited Edition Sneakers</p>
+                                <p class="cart-price"></p>
+                            </div>
+                        </div>
+                        <img class="icon-delete" src="./images/icon-delete.svg" alt="Delete icon">
+                    </div>
+                    <a class="a-button-wrapper" href="./coming-soon.html">
+                        <button class="button-cart">
+                            <p>Checkout</p>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="images-container">
+            <div class="display-image-container">
+                <img class="image-displayed" src="./images/image-product-1.jpg" alt="Product 1 image">
+                <nav class="nav-display-image">
+                    <!-- Get rid of this Nav -->
+                    <div class="arrow-container">
+                        <img class="arrow arrow-previous" src="./images/icon-previous.svg" alt="Previous arrow">
+                    </div>
+                    <div class="arrow-container">
+                        <img class="arrow arrow-next" src="./images/icon-next.svg" alt="Next arrow">
+                    </div>
+                </nav>
+            </div>
+            <div class="desktop-thumbnails-row">
+                <img class="desktop-thumbnails-row-img" src="./images/image-product-1-thumbnail.jpg" alt="Desktop thumbnail image">
+                <img class="desktop-thumbnails-row-img" src="./images/image-product-2-thumbnail.jpg" alt="Desktop thumbnail image">
+                <img class="desktop-thumbnails-row-img" src="./images/image-product-3-thumbnail.jpg" alt="Desktop thumbnail image">
+                <img class="desktop-thumbnails-row-img" src="./images/image-product-4-thumbnail.jpg" alt="Desktop thumbnail image">
+            </div>
+        </div>
+        <div class="text-container">
+            <span class="company">SNEAKER COMPANY</span>
+            <h1 class="shoe-type">Fall Limited Edition Sneakers</h1>
+            <p class="description">These low-profile sneakers are your perfect casual wear companion. Featuring a
+                durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+            <div class="price-container">
+                <div class="price-and-discount">
+                    <p class="price">$125.00</p>
+                    <span class="discount">50%</span>
+                </div>
+                <p class="original-price">$250.00</p>
+            </div>
+            <div class="input-and-button-container">
+                <div class="input-container">
+                    <input class="input-num-of-shoes" type="text" placeholder="0">
+                    <img class="math-symbol icon-minus" src="./images/icon-minus.svg" alt="Minus icon">
+                    <img class="math-symbol icon-plus" src="./images/icon-plus.svg" alt="Plus icon">
+                </div>
+                <button class="button-page">
+                    <div class="cart-and-text">
+                        <img class="icon-cart-button" src="./images/icon-cart.svg" alt="Cart icon">
+                        <p class="button-text">Add to cart</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
