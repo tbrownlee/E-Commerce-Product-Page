@@ -16,12 +16,12 @@
 
 <body>
     <header class="header">
-        <div class="menu-logo-container">
+        <div class="menu-and-logo-container">
             <img class="icon-menu" src="./images/icon-menu.svg" alt="Menu icon">
             <div class="logo-and-nav-container">
                 <img class="logo" src="./images/logo.svg" alt="Logo">
                 <nav class="nav">
-                    <img class="icon-close" src="./images/icon-close.svg" alt="Close icon">
+                    <img class="nav-icon-close" src="./images/icon-close.svg" alt="Close icon">
                     <ul class="menu">
                         <li class="nav-li"><a class="nav-link" href="coming-soon.html">Collections</a></li>
                         <li class="nav-li"><a class="nav-link" href="coming-soon.html">Men</a></li>
@@ -32,19 +32,18 @@
                 </nav>
             </div>
         </div>
-        <div class="cart-avatar-container">
+        <div class="cart-and-avatar-container">
             <div class="icon-cart-header-container">
                 <img class="icon-cart-header" src="./images/icon-cart.svg" alt="Cart icon">
-                <span class="icon-cart-number">2</span>
+                <span class="icon-cart-header-number">2</span>
             </div>
             <img class="image-avatar" src="./images/image-avatar.png" alt="Avatar image">
         </div>
-        <div class="overlay">
-            <!-- Lightbox -->
-        </div>
+        <!-- Mobile overlay -->
+        <div class="mobile-overlay"></div>
         <div class="cart-container">
             <div class="cart-top">
-                <h2 class="top-title">Cart</h2>
+                <h2 class="cart-top-title">Cart</h2>
             </div>
             <div class="cart-bottom">
                 <div class="empty-text-container">
@@ -61,15 +60,42 @@
                         </div>
                         <img class="icon-delete" src="./images/icon-delete.svg" alt="Delete icon">
                     </div>
-                    <a class="a-button-wrapper" href="./coming-soon.html">
-                        <button class="button-cart">
-                            <p>Checkout</p>
-                        </button>
-                    </a>
+                    <a class="cart-link-checkout" href="./coming-soon.html">Checkout</a>
                 </div>
             </div>
         </div>
     </header>
+    <div class="desktop-overlay">
+        <!-- Lightbox -->
+        <div class="overlay-images-container">
+            <div class="overlay-display-images-container">
+                <img class="overlay-icon-close" src="./images/icon-close.svg" alt="Close icon">
+                <div class="overlay-display-image-container">
+                    <img class="overlay-displayed" src="./images/image-product-1.jpg" alt="Product 1 image">
+                    <nav class="overlay-nav-display-image">
+                        <!-- Get rid of this Nav (name?) -->
+                        <div class="overlay-arrow-container">
+                            <img class="overlay-arrow overlay-arrow-previous" src="./images/icon-previous.svg"
+                                alt="Previous arrow">
+                        </div>
+                        <div class="overlay-arrow-container">
+                            <img class="overlay-arrow overlay-arrow-next" src="./images/icon-next.svg" alt="Next arrow">
+                        </div>
+                    </nav>
+                </div>
+                <div class="overlay-thumbnails-row">
+                    <img class="overlay-thumbnails-row-img" src="./images/image-product-1-thumbnail.jpg"
+                        alt="Desktop thumbnail image">
+                    <img class="overlay-thumbnails-row-img" src="./images/image-product-2-thumbnail.jpg"
+                        alt="Desktop thumbnail image">
+                    <img class="overlay-thumbnails-row-img" src="./images/image-product-3-thumbnail.jpg"
+                        alt="Desktop thumbnail image">
+                    <img class="overlay-thumbnails-row-img" src="./images/image-product-4-thumbnail.jpg"
+                        alt="Desktop thumbnail image">
+                </div>
+            </div>
+        </div>
+    </div>
     <main>
         <div class="images-container">
             <div class="display-image-container">
@@ -85,10 +111,14 @@
                 </nav>
             </div>
             <div class="desktop-thumbnails-row">
-                <img class="desktop-thumbnails-row-img" src="./images/image-product-1-thumbnail.jpg" alt="Desktop thumbnail image">
-                <img class="desktop-thumbnails-row-img" src="./images/image-product-2-thumbnail.jpg" alt="Desktop thumbnail image">
-                <img class="desktop-thumbnails-row-img" src="./images/image-product-3-thumbnail.jpg" alt="Desktop thumbnail image">
-                <img class="desktop-thumbnails-row-img" src="./images/image-product-4-thumbnail.jpg" alt="Desktop thumbnail image">
+                <img class="desktop-thumbnails-row-img" src="./images/image-product-1-thumbnail.jpg"
+                    alt="Desktop thumbnail image">
+                <img class="desktop-thumbnails-row-img" src="./images/image-product-2-thumbnail.jpg"
+                    alt="Desktop thumbnail image">
+                <img class="desktop-thumbnails-row-img" src="./images/image-product-3-thumbnail.jpg"
+                    alt="Desktop thumbnail image">
+                <img class="desktop-thumbnails-row-img" src="./images/image-product-4-thumbnail.jpg"
+                    alt="Desktop thumbnail image">
             </div>
         </div>
         <div class="text-container">
