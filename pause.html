@@ -15,51 +15,56 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="logo-and-nav-container">
-            <img class="icon-menu" src="./images/icon-menu.svg" alt="Menu icon">
-            <img class="logo" src="./images/logo.svg" alt="Logo">
-            <ul class="nav">
-                <img class="nav-icon-close" src="./images/icon-close.svg" alt="Close icon">
-                <li class="nav-li"><a class="nav-link" href="coming-soon.html">Collections</a></li>
-                <li class="nav-li"><a class="nav-link" href="coming-soon.html">Men</a></li>
-                <li class="nav-li"><a class="nav-link" href="coming-soon.html">Women</a></li>
-                <li class="nav-li"><a class="nav-link" href="coming-soon.html">About</a></li>
-                <li class="nav-li"><a class="nav-link" href="coming-soon.html">Contact</a></li>
-            </ul>
-        </div>
-        <div class="cart-and-avatar-container">
-            <div class="icon-cart-header-container">
-                <img class="icon-cart-header" src="./images/icon-cart.svg" alt="Cart icon">
-                <span class="icon-cart-header-number">2</span>
-            </div>
-            <img class="image-avatar" src="./images/image-avatar.png" alt="Avatar image">
-        </div>
-        <!-- Mobile overlay -->
-        <div class="mobile-overlay"></div>
-        <div class="cart-container">
-            <div class="cart-top">
-                <h2 class="cart-top-title">Cart</h2>
-            </div>
-            <div class="cart-bottom">
-                <div class="empty-text-container">
-                    <p>Your cart is empty.</p>
+    <div class="content-container">
+        <header class="header">
+            <div class="menu-and-logo-container">
+                <img class="icon-menu" src="./images/icon-menu.svg" alt="Menu icon">
+                <div class="logo-and-nav-container">
+                    <img class="logo" src="./images/logo.svg" alt="Logo">
+                    <nav class="nav">
+                        <img class="nav-icon-close" src="./images/icon-close.svg" alt="Close icon">
+                        <ul class="menu">
+                            <li class="nav-li"><a class="nav-link" href="coming-soon.html">Collections</a></li>
+                            <li class="nav-li"><a class="nav-link" href="coming-soon.html">Men</a></li>
+                            <li class="nav-li"><a class="nav-link" href="coming-soon.html">Women</a></li>
+                            <li class="nav-li"><a class="nav-link" href="coming-soon.html">About</a></li>
+                            <li class="nav-li"><a class="nav-link" href="coming-soon.html">Contact</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                <div class="cart-items-and-button-container">
-                    <div class="cart-items">
-                        <div class="thumbnail-and-text">
-                            <img class="cart-thumbnail" src="./images//image-product-1-thumbnail.jpg" alt="">
-                            <div class="shoe-name-and-price">
-                                <p class="shoe-name">Autumn Limited Edition Sneakers</p>
-                                <p class="cart-price"></p>
-                            </div>
-                        </div>
-                        <img class="icon-delete" src="./images/icon-delete.svg" alt="Delete icon">
+            </div>
+            <div class="cart-and-avatar-container">
+                <div class="icon-cart-header-container">
+                    <img class="icon-cart-header" src="./images/icon-cart.svg" alt="Cart icon">
+                    <span class="icon-cart-header-number">2</span>
+                </div>
+                <img class="image-avatar" src="./images/image-avatar.png" alt="Avatar image">
+            </div>
+            <!-- Mobile overlay -->
+            <div class="mobile-overlay"></div>
+            <div class="cart-container">
+                <div class="cart-top">
+                    <h2 class="cart-top-title">Cart</h2>
+                </div>
+                <div class="cart-bottom">
+                    <div class="empty-text-container">
+                        <p>Your cart is empty.</p>
                     </div>
-                    <a class="cart-link-checkout" href="./coming-soon.html">Checkout</a>
+                    <div class="cart-items-and-button-container">
+                        <div class="cart-items">
+                            <div class="thumbnail-and-text">
+                                <img class="cart-thumbnail" src="./images//image-product-1-thumbnail.jpg" alt="">
+                                <div class="shoe-name-and-price">
+                                    <p class="shoe-name">Autumn Limited Edition Sneakers</p>
+                                    <p class="cart-price"></p>
+                                </div>
+                            </div>
+                            <img class="icon-delete" src="./images/icon-delete.svg" alt="Delete icon">
+                        </div>
+                        <a class="cart-link-checkout" href="./coming-soon.html">Checkout</a>
+                    </div>
                 </div>
-            </div>
-    </header>
+        </header>
     </div>
     <div class="desktop-overlay">
         <!-- Lightbox -->
@@ -80,8 +85,10 @@
                     </nav>
                 </div>
                 <div class="overlay-thumbnails-row">
-                    <img class="overlay-thumbnails-row-img" src="./images/image-product-1-thumbnail.jpg"
+                    <div class="cheese">
+                        <img class="overlay-thumbnails-row-img" src="./images/image-product-1-thumbnail.jpg"
                             alt="Desktop thumbnail image">
+                    </div>
                     <img class="overlay-thumbnails-row-img" src="./images/image-product-2-thumbnail.jpg"
                         alt="Desktop thumbnail image">
                     <img class="overlay-thumbnails-row-img" src="./images/image-product-3-thumbnail.jpg"
@@ -144,6 +151,7 @@
             </div>
         </div>
     </main>
+    </div>
 </body>
 
 </html>

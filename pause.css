@@ -41,17 +41,27 @@ body {
     font-family: "Kumbh Sans", sans-serif;
 }
 
+.content-container {
+    width: 100%;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    width: 100%;
     padding: 1.7rem 2rem;
 }
 
-.icon-menu {
-    margin-right: 1rem;
+.menu-and-logo-container,
+.cart-and-avatar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-and-logo-container {
+    gap: 1.5rem;
 }
 
 .logo {
@@ -61,13 +71,11 @@ body {
 /* Nav */
 .nav {
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     bottom: 0;
     left: 0;
 
-    transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    transition: all 0.2s ease-in-out;
+    display: none;
 
     width: 68%;
     height: 100%;
@@ -99,10 +107,6 @@ body {
 
 /* Cart and avatar container */
 .cart-and-avatar-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     gap: 1.8rem;
 }
 
@@ -145,7 +149,7 @@ body {
 
     display: none;
 
-    width: 100%;
+    width: 32%;
     height: 100%;
 
     background-color: hsla(0, 0%, 0%, .75);
@@ -278,9 +282,12 @@ body {
     text-decoration: none;
 }
 
+.cart-link-checkout:hover {
+    opacity: .7;
+}
+
 /* Main */
 main {
-    margin-bottom: 7rem;
     width: 100%;
 }
 
@@ -510,9 +517,6 @@ main {
 
 
 @media only screen and (min-width: 31rem) {
-    .logo:hover {
-        cursor: pointer;
-    }
 
     .display-image-container,
     .overlay-display-image-container {
@@ -520,74 +524,6 @@ main {
         overflow: visible;
 
         height: auto;
-    }
-
-    .icon-menu:hover {
-        cursor: pointer;
-    }
-
-    .icon-cart-header-number:hover {
-        cursor: pointer;
-    }
-
-    .icon-cart-header:hover {
-        filter: brightness(0) saturate(100%) invert(0%) sepia(98%) saturate(12%) hue-rotate(336deg) brightness(97%) contrast(100%);
-
-        transition: .2s;
-
-        cursor: pointer;
-    }
-
-    .nav-link:hover {
-        transition: .2s;
-
-        color: var(--black);
-    }
-
-    .image-avatar:hover {
-        transition: .2s;
-
-        border: .2rem solid var(--orange);
-        border-radius: 3rem;
-
-        cursor: pointer;
-    }
-
-    .cart-container {
-        top: 7rem;
-        right: 6rem;
-        left: auto;
-
-        width: 35rem;
-    }
-
-    .icon-delete:hover {
-        cursor: pointer;
-    }
-
-    .cart-link-checkout:hover {
-        opacity: .7;
-    }
-
-    .button-cart:hover {
-        opacity: .7;
-
-        cursor: pointer;
-    }
-
-    .arrow-container:hover,
-    .overlay-arrow-container:hover {
-        cursor: pointer;
-    }
-
-    .math-symbol:hover {
-        cursor: pointer;
-    }
-
-    .button-page:hover {
-        opacity: .7;
-
-        cursor: pointer;
     }
 }
 
@@ -613,15 +549,14 @@ main {
 
 
 
-@media only screen and (min-width: 52rem) {
-    body {
-        padding: 0% 10%;
+@media only screen and (min-width: 45rem) {
+    .content-container {
+        width: 80%;
     }
 
     .header {
         margin-bottom: 8rem;
         border-bottom: .1rem solid hsla(220, 14%, 75%, .4);
-        width: 100%;
         padding: 3.5rem 0rem 4rem 0rem;
     }
 
@@ -631,31 +566,24 @@ main {
 
     .logo-and-nav-container {
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
 
-        margin-right: 2rem;
         width: 100%;
-        max-width: 800px;
     }
 
     .logo {
         margin-right: 5rem;
-        width: 16rem;
+        width: 18rem;
     }
 
     .nav {
+        /* change back to static */
         position: relative;
-        z-index: 0;
 
         display: flex;
-        justify-content: space-between;
-
-        transform: translateX(0);
-        -webkit-transform: translateX(0);
 
         width: 100%;
-        max-width: 400px;
         height: 100%;
         padding: 0;
     }
@@ -664,8 +592,16 @@ main {
         display: none;
     }
 
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 0;
+    }
+
     .nav-li:not(:last-of-type) {
-        margin-right: 0rem;
+        margin-right: 3.5rem;
         margin-bottom: 0rem;
     }
 
@@ -675,6 +611,12 @@ main {
         font-size: 1.6rem;
         font-weight: 400;
         color: var(--dark-grayish-blue);
+    }
+
+    .nav-link:hover {
+        transition: .2s;
+
+        color: var(--black);
     }
 
     .nav-link::after {
@@ -694,21 +636,43 @@ main {
         width: 100%;
     }
 
-    .cart-and-avatar-container {
-        position: relative;
+    .cart-and-avatar-container { 
         display: flex;
         justify-content: space-between;
-
-        /* Fix in mobile */
+        
         gap: 0;
+        
+        width: 100%;    
+        max-width: 112px; 
+    }
 
-        width: 100%;
-        max-width: 112px;
+    .icon-cart-header {
+        margin-right: 2rem;
+    }
+
+    .icon-cart-header:hover {
+        filter: brightness(0) saturate(100%) invert(0%) sepia(98%) saturate(12%) hue-rotate(336deg) brightness(97%) contrast(100%);
+
+        transition: .2s;
+
+        cursor: pointer;
+    }
+
+    .icon-cart-header-number:hover {
+        cursor: pointer;
     }
 
     .image-avatar {
-        margin-left: 2rem;
         width: 5rem;
+    }
+
+    .image-avatar:hover {
+        transition: .2s;
+
+        border: .2rem solid var(--orange);
+        border-radius: 3rem;
+
+        cursor: pointer;
     }
 
     .cart-container {
@@ -719,12 +683,23 @@ main {
         width: 35rem;
     }
 
+    .icon-delete:hover {
+        cursor: pointer;
+    }
+
+    .button-cart:hover {
+        opacity: .7;
+
+        cursor: pointer;
+    }
+
     main {
         display: flex;
-        justify-content: center;
-        gap: 9%;
+        gap: 2rem;
 
+        /* Change this */
         margin-bottom: 15rem;
+        padding: 0;
     }
 
     /* Images container */
@@ -738,17 +713,6 @@ main {
 
     .overlay-images-container {
         display: flex;
-    }
-
-    .images-container,
-    .overlay-images-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        width: 100%;
-        min-width: 300px;
-        max-width: 450px;
     }
 
     .images-container {
@@ -790,6 +754,7 @@ main {
     .image-displayed,
     .overlay-displayed {
         border-radius: 2rem;
+        width: 45rem;
     }
 
     .image-displayed:hover,
@@ -806,16 +771,21 @@ main {
         left: -2.5rem;
     }
 
+    .arrow-container:hover,
+    .overlay-arrow-container:hover {
+        cursor: pointer;
+    }
+
     .overlay-arrow-container {
         border-radius: 3rem;
         padding: 1.5rem 1.8rem;
     }
 
-    .overlay-arrow-container > img {
+    .overlay-arrow-container>img {
         transition: .2s;
     }
 
-    .overlay-arrow-container:hover > img {
+    .overlay-arrow-container:hover>img {
         transition: .2s;
 
         filter: brightness(0) saturate(100%) invert(63%) sepia(98%) saturate(2737%) hue-rotate(345deg) brightness(99%) contrast(105%);
@@ -833,7 +803,7 @@ main {
     .overlay-thumbnails-row-img {
         border: .3rem solid transparent;
         border-radius: var(--input-button-border-radius);
-        width: 100%;
+        width: 8rem;
     }
 
     /* For next two, I changed */
@@ -846,12 +816,12 @@ main {
         opacity: .6;
     }
 
+
     /* Text container */
     .text-container {
         flex-basis: 50%;
 
         max-width: 45rem;
-        padding: 1.8rem 0rem 1.8rem 1.8rem;
     }
 
     .company {
@@ -888,9 +858,19 @@ main {
         outline: none;
     }
 
+    .math-symbol:hover {
+        cursor: pointer;
+    }
+
     .button-page {
         width: 100%;
         padding: 0;
+    }
+
+    .button-page:hover {
+        opacity: .7;
+
+        cursor: pointer;
     }
 }
 
@@ -932,13 +912,8 @@ main {
     filter: brightness(0) saturate(100%) invert(0%) sepia(98%) saturate(12%) hue-rotate(336deg) brightness(97%) contrast(100%);
 }
 
-.show-overlay {
+.show-block {
     display: block;
-}
-
-.show-menu {
-    transform: translateX(0);
-    -webkit-transform: translateX(0);
 }
 
 .show-flex {
@@ -953,7 +928,13 @@ main {
     display: inline;
 }
 
+.cheese {
+    z-index: 5;
+}
+
 .selected {
+    opacity: .3;
+    
     border: .3rem solid var(--orange);
 }
 
@@ -974,4 +955,16 @@ main {
 
 .overlay-thumbnails-row-img:hover {
     cursor: pointer;
+}
+
+.selected::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
 }

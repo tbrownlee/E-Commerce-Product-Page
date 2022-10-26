@@ -1,32 +1,33 @@
 'use strict';
 
 let arrowContainer = document.querySelectorAll('.arrow-container');
-let overlayArrowContainer = document.querySelectorAll('.overlay-arrow-container')
-let imageDisplayed = document.querySelector('.image-displayed');
-let input = document.querySelector('.input-num-of-shoes');
-let iconCartHeader = document.querySelector('.icon-cart-header');
-let nav = document.querySelector('.nav');
-let iconMenu = document.querySelector('.icon-menu');
-let navIconClose = document.querySelector('.nav-icon-close');
-let mobileOverlay = document.querySelector('.mobile-overlay');
-let desktopOverlay = document.querySelector('.desktop-overlay');
+let buttonPage = document.querySelector('.button-page');
 let cartContainer = document.querySelector('.cart-container');
-let emptyTextContainer = document.querySelector('.empty-text-container');
 let cartItemsAndButtonContainer = document.querySelector('.cart-items-and-button-container');
-let mathSymbol = document.querySelector('.math-symbol');
+let cartPrice = document.querySelector('.cart-price');
+let desktopDisplayed = document.querySelector('.desktop-displayed');
+let desktopOverlay = document.querySelector('.desktop-overlay');
+let desktopThumbnailsRowImg = document.querySelectorAll('.desktop-thumbnails-row-img');
+let emptyTextContainer = document.querySelector('.empty-text-container');
+let iconCartHeader = document.querySelector('.icon-cart-header');
+let iconCartHeaderNumber = document.querySelector('.icon-cart-header-number');
+let iconDelete = document.querySelector('.icon-delete');
+let iconMenu = document.querySelector('.icon-menu');
 let iconMinus = document.querySelector('.icon-minus');
 let iconPlus = document.querySelector('.icon-plus');
-let buttonPage = document.querySelector('.button-page');
-let iconDelete = document.querySelector('.icon-delete');
-let cartPrice = document.querySelector('.cart-price');
-let total = document.querySelector('.total');
-let iconCartHeaderNumber = document.querySelector('.icon-cart-header-number');
-let desktopThumbnailsRowImg = document.querySelectorAll('.desktop-thumbnails-row-img');
+let imageDisplayed = document.querySelector('.image-displayed');
+let input = document.querySelector('.input-num-of-shoes');
+let logo = document.querySelector('.logo');
+let mathSymbol = document.querySelector('.math-symbol');
+let mobileOverlay = document.querySelector('.mobile-overlay');
+let nav = document.querySelector('.nav');
+let navIconClose = document.querySelector('.nav-icon-close');
+let overlayArrowContainer = document.querySelectorAll('.overlay-arrow-container')
+let overlayDisplayed = document.querySelector('.overlay-displayed');
 let overlayIconClose = document.querySelector('.overlay-icon-close');
 let overlayImagesContainer = document.querySelector('.overlay-images-container');
-let desktopDisplayed = document.querySelector('.desktop-displayed');
 let overlayThumbnailsRowImg = document.querySelectorAll('.overlay-thumbnails-row-img');
-let overlayDisplayed = document.querySelector('.overlay-displayed');
+let total = document.querySelector('.total');
 
 
 
@@ -35,44 +36,43 @@ desktopThumbnailsRowImg[0].classList.toggle('selected');
 
 
 
-
+/* Event listeners*/
 iconMenu.addEventListener('click', () => {
     toggleMenu();
-})
+});
 
 navIconClose.addEventListener('click', () => {
     toggleMenu();
-})
+});
 
 mobileOverlay.addEventListener('click', () => {
     toggleMenu();
-})
+});
 
 desktopOverlay.addEventListener('click', (e) => {
     if (!overlayImagesContainer.contains(e.target)) {
         desktopOverlay.classList.toggle('show-desktop-overlay');
         overlayDisplayed.src = desktopDisplayed.src;
     }
-})
+});
 
 overlayIconClose.addEventListener('click', () => {
     desktopOverlay.classList.toggle('show-desktop-overlay');
     overlayDisplayed.src = desktopDisplayed.src;
 
     untoggleAllSelected(overlayThumbnailsRowImg); 
-})
-
+});
 
 iconMinus.addEventListener('click', () => {
     if (input.value == 0) {
         return;
     }
     input.value--;
-})
+});
 
 iconPlus.addEventListener('click', () => {
     input.value++;
-})
+});
 
 
 document.addEventListener('click', (e) => {
@@ -81,36 +81,110 @@ document.addEventListener('click', (e) => {
     } else if (iconCartHeader.contains(e.target) || iconCartHeaderNumber.contains(e.target)) {
         toggleCart();
     }
-})
+});
 
 /* Check for non numbers */
 input.addEventListener('input', () => {
     if (isNaN(input.value)) {
         input.value = '';
     }
-})
+});
 
 buttonPage.addEventListener('click', () => {
     toggleCartDisplay(input.value);
-})
+});
 
 iconDelete.addEventListener('click', () => {
     emptyTextContainer.classList.toggle('hide');
     cartItemsAndButtonContainer.classList.toggle('show-flex');
     iconCartHeaderNumber.classList.toggle('show-inline');
     input.value = '';
-})
+});
 
 iconCartHeaderNumber.addEventListener('click', () => {
     if (!isCartItemsAndButtonContainerToggled()) {
         toggleCart();
     }
-})
+});
+
+imageDisplayed.addEventListener('click', () => {
+    /* Queue lightbox */
+    desktopOverlay.classList.toggle('show-desktop-overlay');
+    overlayDisplayed.src = imageDisplayed.src;
+
+    untoggleAllSelected(overlayThumbnailsRowImg);
+
+    let index = parseInt(imageDisplayed.src.slice(-5, -4));
+    toggleOverlayThumbnailImg(index);
+});
+
+desktopThumbnailsRowImg.forEach(img => {
+    img.addEventListener('click', () => {
+        let index = parseInt(img.src.slice(-15, -14));
+        imageDisplayed.src = `./images/image-product-${index}.jpg`;
+        untoggleAllSelected(desktopThumbnailsRowImg);
+
+        img.classList.toggle('selected');
+    })
+});
+
+overlayThumbnailsRowImg.forEach(img => {
+    img.addEventListener('click', () => {
+        let index = parseInt(img.src.slice(-15, -14));
+        overlayDisplayed.src = `./images/image-product-${index}.jpg`;
+        untoggleAllSelected(overlayThumbnailsRowImg);
+
+        img.classList.toggle('selected');
+    })
+});
+
+/* These two functions change the imageDisplayed */
+arrowContainer[0].addEventListener('click', () => {
+    let index = parseInt(imageDisplayed.src.slice(-5, -4));
+
+    (index - 1 == 0) ? index = 4 : index--;
+
+    imageDisplayed.src = `./images/image-product-${index}.jpg`;
+});
+
+arrowContainer[1].addEventListener('click', () => {
+    let index = parseInt(imageDisplayed.src.slice(-5, -4));
+
+    (index + 1 == 5) ? index = 1 : index++;
+
+    imageDisplayed.src = `./images/image-product-${index}.jpg`;
+});
+
+overlayArrowContainer[0].addEventListener('click', () => {
+    let index = parseInt(overlayDisplayed.src.slice(-5, -4));
+
+    (index - 1 == 0) ? index = 4 : index--;
+
+    overlayDisplayed.src = `./images/image-product-${index}.jpg`;
+
+    untoggleAllSelected(overlayThumbnailsRowImg);
+    toggleOverlayThumbnailImg(index);
+});
+
+overlayArrowContainer[1].addEventListener('click', () => {
+    let index = parseInt(overlayDisplayed.src.slice(-5, -4));
+
+    (index + 1 == 5) ? index = 1 : index++;
+
+    overlayDisplayed.src = `./images/image-product-${index}.jpg`;
+
+    untoggleAllSelected(overlayThumbnailsRowImg);
+    toggleOverlayThumbnailImg(index);
+});
+
+logo.addEventListener('click', () => {
+    window.location.reload();
+});
 
 /* Accessory functions */
 function toggleMenu() {
-    nav.classList.toggle('show-block');
-    mobileOverlay.classList.toggle('show-block');
+    nav.classList.toggle('show-menu');
+    mobileOverlay.classList.toggle('show-overlay');
 }
 
 function toggleCart() {
@@ -135,11 +209,9 @@ function toggleCartDisplay(num) {
     }
 }
 
-
 function isCartItemsAndButtonContainerToggled() {
     return cartItemsAndButtonContainer.classList.contains('show-flex');
 }
-
 
 function updateAmountAndTotal(num) {
     cartPrice.innerHTML = '$125.00 x ' + num + ' ';
@@ -150,39 +222,6 @@ function updateAmountAndTotal(num) {
     cartPrice.append(total)
 }
 
-
-imageDisplayed.addEventListener('click', () => {
-    /* Queue lightbox */
-    desktopOverlay.classList.toggle('show-desktop-overlay');
-    overlayDisplayed.src = imageDisplayed.src;
-
-    untoggleAllSelected(overlayThumbnailsRowImg);
-
-    let index = parseInt(imageDisplayed.src.slice(-5, -4));
-    toggleOverlayThumbnailImg(index);
-})
-
-
-desktopThumbnailsRowImg.forEach(img => {
-    img.addEventListener('click', () => {
-        let index = parseInt(img.src.slice(-15, -14));
-        imageDisplayed.src = `./images/image-product-${index}.jpg`;
-        untoggleAllSelected(desktopThumbnailsRowImg);
-
-        img.classList.toggle('selected');
-    })
-})
-
-overlayThumbnailsRowImg.forEach(img => {
-    img.addEventListener('click', () => {
-        let index = parseInt(img.src.slice(-15, -14));
-        overlayDisplayed.src = `./images/image-product-${index}.jpg`;
-        untoggleAllSelected(overlayThumbnailsRowImg);
-
-        img.classList.toggle('selected');
-    })
-})
-
 /* Multi use function */
 function untoggleAllSelected(type) {
     for (let i = 0; i < type.length; i++) {
@@ -191,45 +230,6 @@ function untoggleAllSelected(type) {
         }
     }
 }
-
-/* These two functions change the imageDisplayed */
-arrowContainer[0].addEventListener('click', () => {
-    let index = parseInt(imageDisplayed.src.slice(-5, -4));
-
-    (index - 1 == 0) ? index = 4 : index--;
-
-    imageDisplayed.src = `./images/image-product-${index}.jpg`;
-})
-
-arrowContainer[1].addEventListener('click', () => {
-    let index = parseInt(imageDisplayed.src.slice(-5, -4));
-
-    (index + 1 == 5) ? index = 1 : index++;
-
-    imageDisplayed.src = `./images/image-product-${index}.jpg`;
-})
-
-overlayArrowContainer[0].addEventListener('click', () => {
-    let index = parseInt(overlayDisplayed.src.slice(-5, -4));
-
-    (index - 1 == 0) ? index = 4 : index--;
-
-    overlayDisplayed.src = `./images/image-product-${index}.jpg`;
-
-    untoggleAllSelected(overlayThumbnailsRowImg);
-    toggleOverlayThumbnailImg(index);
-})
-
-overlayArrowContainer[1].addEventListener('click', () => {
-    let index = parseInt(overlayDisplayed.src.slice(-5, -4));
-
-    (index + 1 == 5) ? index = 1 : index++;
-
-    overlayDisplayed.src = `./images/image-product-${index}.jpg`;
-
-    untoggleAllSelected(overlayThumbnailsRowImg);
-    toggleOverlayThumbnailImg(index);
-})
 
 function toggleOverlayThumbnailImg(index) {
     for (let i = 0; i < overlayThumbnailsRowImg.length; i++) {
