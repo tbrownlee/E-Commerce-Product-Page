@@ -23,11 +23,10 @@ html {
     --grayish-blue: hsl(220, 14%, 75%);
     --light-grayish-blue: hsl(223, 64%, 98%);
     --white: hsl(0, 0%, 100%);
-    /* Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%)*/
     --black: hsl(0, 0%, 0%);
 
-    --input-button-border-radius: .8rem;
-    --input-button-padding: 1.5rem;
+    --button-border-radius: .8rem;
+    --button-padding: 1.5rem;
 }
 
 body {
@@ -241,7 +240,7 @@ body {
     justify-content: center;
 
     border: none;
-    border-radius: var(--input-button-border-radius);
+    border-radius: var(--button-border-radius);
 
     width: 100%;
     padding: 1.8rem;
@@ -417,9 +416,9 @@ main {
 
 .input-num-of-shoes {
     border: none;
-    border-radius: var(--input-button-border-radius);
+    border-radius: var(--button-border-radius);
     width: 100%;
-    padding: var(--input-button-padding);
+    padding: var(--button-padding);
 
     background-color: var(--light-grayish-blue);
 
@@ -459,9 +458,9 @@ main {
 
     box-shadow: 0rem 2.5rem 2rem 0rem hsl(25, 100%, 94%);
     border: none;
-    border-radius: var(--input-button-border-radius);
+    border-radius: var(--button-border-radius);
     width: 100%;
-    padding: var(--input-button-padding);
+    padding: var(--button-padding);
 
     background-color: var(--orange);
 }
@@ -824,13 +823,21 @@ main {
     .desktop-thumbnails-row-img,
     .overlay-thumbnails-row-img {
         border: .3rem solid transparent;
-        border-radius: var(--input-button-border-radius);
+        border-radius: var(--button-border-radius);
         width: 100%;
     }
 
     .desktop-thumbnails-row-img:hover,
     .overlay-thumbnails-row-img:hover {
         cursor: pointer;
+    }
+
+    .desktop-thumbnails-row-img:hover {
+        opacity: .6;
+    }
+
+    .overlay-thumbnails-row-img:hover {
+        filter: brightness(1.2);
     }
 
     /* Text container */
