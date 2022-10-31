@@ -83,7 +83,7 @@ document.addEventListener('click', (e) => {
     }
 });
 
-/* Check for non numbers */
+/* Checks for non numbers */
 input.addEventListener('input', () => {
     if (isNaN(input.value)) {
         input.value = '';
@@ -107,8 +107,12 @@ iconCartHeaderNumber.addEventListener('click', () => {
     }
 });
 
+/* Queue lightbox */
 imageDisplayed.addEventListener('click', () => {
-    /* Queue lightbox */
+    let mediaQuery = window.matchMedia('(max-width: 400px)');
+    if(mediaQuery.matches) {
+        return;
+    }
     desktopOverlay.classList.toggle('show-desktop-overlay');
     overlayDisplayed.src = imageDisplayed.src;
 

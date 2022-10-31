@@ -35,8 +35,6 @@
             </div>
             <img class="image-avatar" src="./images/image-avatar.png" alt="Avatar image">
         </div>
-        <!-- Mobile overlay -->
-        <div class="mobile-overlay"></div>
         <div class="cart-container">
             <div class="cart-top">
                 <h2 class="cart-top-title">Cart</h2>
@@ -60,16 +58,16 @@
                 </div>
             </div>
     </header>
-    </div>
+    <!-- Mobile overlay -->
+    <div class="mobile-overlay"></div>
+    <!-- Desktop overlay -->
     <div class="desktop-overlay">
-        <!-- Lightbox -->
         <div class="overlay-images-container">
             <div class="overlay-display-images-container">
                 <img class="overlay-icon-close" src="./images/icon-close.svg" alt="Close icon">
                 <div class="overlay-display-image-container">
                     <img class="overlay-displayed" src="./images/image-product-1.jpg" alt="Product 1 image">
-                    <nav class="overlay-nav-display-image">
-                        <!-- Get rid of this Nav (name?) -->
+                    <div class="overlay-two-arrows-container">
                         <div class="overlay-arrow-container">
                             <img class="overlay-arrow overlay-arrow-previous" src="./images/icon-previous.svg"
                                 alt="Previous arrow">
@@ -77,11 +75,11 @@
                         <div class="overlay-arrow-container">
                             <img class="overlay-arrow overlay-arrow-next" src="./images/icon-next.svg" alt="Next arrow">
                         </div>
-                    </nav>
+                    </div>
                 </div>
                 <div class="overlay-thumbnails-row">
                     <img class="overlay-thumbnails-row-img" src="./images/image-product-1-thumbnail.jpg"
-                            alt="Desktop thumbnail image">
+                        alt="Desktop thumbnail image">
                     <img class="overlay-thumbnails-row-img" src="./images/image-product-2-thumbnail.jpg"
                         alt="Desktop thumbnail image">
                     <img class="overlay-thumbnails-row-img" src="./images/image-product-3-thumbnail.jpg"
@@ -96,7 +94,7 @@
         <div class="images-container">
             <div class="display-image-container">
                 <img class="image-displayed" src="./images/image-product-1.jpg" alt="Product 1 image">
-                <nav class="nav-display-image">
+                <div class="two-arrows-container">
                     <!-- Get rid of this Nav -->
                     <div class="arrow-container">
                         <img class="arrow arrow-previous" src="./images/icon-previous.svg" alt="Previous arrow">
@@ -104,7 +102,7 @@
                     <div class="arrow-container">
                         <img class="arrow arrow-next" src="./images/icon-next.svg" alt="Next arrow">
                     </div>
-                </nav>
+                </div>
             </div>
             <div class="desktop-thumbnails-row">
                 <img class="desktop-thumbnails-row-img" src="./images/image-product-1-thumbnail.jpg"
