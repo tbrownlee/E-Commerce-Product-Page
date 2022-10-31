@@ -40,6 +40,7 @@ body {
     font-family: "Kumbh Sans", sans-serif;
 }
 
+/* Header */
 .header {
     display: flex;
     justify-content: space-between;
@@ -275,6 +276,7 @@ main {
     width: 100%;
 }
 
+/* */
 .overlay-images-container {
     display: none;
 }
@@ -564,8 +566,7 @@ main {
         cursor: pointer;
     }
 
-    .arrow-container:hover,
-    .overlay-arrow-container:hover {
+    .arrow-container:hover {
         cursor: pointer;
     }
 
@@ -579,19 +580,6 @@ main {
         cursor: pointer;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -725,12 +713,10 @@ main {
 
     .desktop-overlay {
         position: fixed;
-    }
 
-    .overlay-images-container {
-        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-
     .images-container,
     .overlay-images-container {
         display: flex;
@@ -746,7 +732,7 @@ main {
         flex-basis: 50%;
     }
 
-    .overlay-display-images-container {
+    .overlay-display-image-container {
         display: flex;
         flex-direction: column;
     }
@@ -783,8 +769,7 @@ main {
         border-radius: 2rem;
     }
 
-    .image-displayed:hover,
-    .overlay-displayed:hover {
+    .image-displayed:hover {
         cursor: pointer;
     }
 
@@ -800,6 +785,10 @@ main {
     .overlay-arrow-container {
         border-radius: 3rem;
         padding: 1.5rem 1.8rem;
+    }
+
+    .overlay-arrow-container:hover {
+        cursor: pointer;
     }
 
     .overlay-arrow-container>img {
@@ -959,7 +948,4 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    width: 100%;
-    height: 100%;
 }
