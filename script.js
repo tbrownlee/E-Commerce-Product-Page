@@ -109,7 +109,7 @@ iconCartHeaderNumber.addEventListener('click', () => {
 
 /* Queue lightbox */
 imageDisplayed.addEventListener('click', () => {
-    let mediaQuery = window.matchMedia('(max-width: 400px)');
+    let mediaQuery = window.matchMedia('(max-width: 813px)');
     if(mediaQuery.matches) {
         return;
     }

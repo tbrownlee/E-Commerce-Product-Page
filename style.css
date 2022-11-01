@@ -104,6 +104,7 @@ body {
     align-items: center;
 }
 
+/* Icon cart header container */
 .icon-cart-header-container {
     position: relative;
 }
@@ -151,11 +152,13 @@ body {
     background-color: var(--white);
 }
 
+/* Cart top */
 .cart-top {
     border-bottom: .1rem solid hsla(220, 14%, 75%, .4);
     padding: 2.2rem;
 }
 
+/* Cart bottom */
 .cart-bottom {
     display: flex;
     flex-direction: column;
@@ -236,6 +239,7 @@ body {
     width: 1.3rem;
 }
 
+/* Cart link checkout */
 .cart-link-checkout {
     display: flex;
     justify-content: center;
@@ -276,11 +280,12 @@ main {
     width: 100%;
 }
 
-/* */
+/* Overlay images container */
 .overlay-images-container {
     display: none;
 }
 
+/* Display image container */
 .display-image-container,
 .overlay-display-image-container {
     position: relative;
@@ -299,6 +304,7 @@ main {
     width: 100%;
 }
 
+/* Two arrows container */
 .two-arrows-container,
 .overlay-two-arrows-container {
     position: absolute;
@@ -309,9 +315,9 @@ main {
     justify-content: space-between;
 }
 
+/* Arrow container */
 .arrow-container,
 .overlay-arrow-container {
-    /* Not sure about display here */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -453,7 +459,7 @@ main {
     right: 1.5rem;
 }
 
-/* Button */
+/* Button page */
 .button-page {
     display: flex;
     justify-content: center;
@@ -467,6 +473,7 @@ main {
     background-color: var(--orange);
 }
 
+/* Cart and text */
 .cart-and-text {
     display: flex;
     align-items: center;
@@ -505,7 +512,12 @@ main {
     .logo:hover {
         cursor: pointer;
     }
+    
+    .nav-icon-close:hover {
+        cursor: pointer;
+    }  
 
+    /* Display image container */
     .display-image-container,
     .overlay-display-image-container {
         overflow: visible;
@@ -544,6 +556,7 @@ main {
         cursor: pointer;
     }
 
+    /* Cart container */
     .cart-container {
         top: 7rem;
         right: 6rem;
@@ -566,6 +579,7 @@ main {
         cursor: pointer;
     }
 
+    /* Arrow container */
     .arrow-container:hover {
         cursor: pointer;
     }
@@ -595,6 +609,7 @@ main {
         padding: 0% 10%;
     }
 
+    /* Header */
     .header {
         margin-bottom: 8rem;
         border-bottom: .1rem solid hsla(220, 14%, 75%, .4);
@@ -605,6 +620,7 @@ main {
         display: none;
     }
 
+    /* Logo and nav container */
     .logo-and-nav-container {
         display: flex;
         justify-content: flex-start;
@@ -620,6 +636,7 @@ main {
         width: 16rem;
     }
 
+    /* Nav */
     .nav {
         position: relative;
         z-index: 0;
@@ -674,11 +691,11 @@ main {
         width: 100%;
     }
 
+    /* Cart and avatar container */
     .cart-and-avatar-container {
         position: relative;
         justify-content: space-between;
 
-        /* Fix in mobile */
         gap: 0;
 
         width: 100%;
@@ -690,6 +707,7 @@ main {
         width: 5rem;
     }
 
+    /* Cart container */
     .cart-container {
         top: 11rem;
         right: 10rem;
@@ -698,6 +716,7 @@ main {
         width: 35rem;
     }
 
+    /* Main */
     main {
         display: flex;
         justify-content: center;
@@ -711,12 +730,15 @@ main {
         display: none;
     }
 
+    /*vDesktop overlay */
     .desktop-overlay {
         position: fixed;
 
         justify-content: center;
         align-items: center;
     }
+
+    /* Images container */
     .images-container,
     .overlay-images-container {
         display: flex;
@@ -737,6 +759,7 @@ main {
         flex-direction: column;
     }
 
+    /* Display image container */
     .display-image-container,
     .overlay-display-image-container {
         overflow: visible;
@@ -773,6 +796,7 @@ main {
         cursor: pointer;
     }
 
+    /* Two arrows container */
     .two-arrows-container {
         display: none;
     }
@@ -782,6 +806,7 @@ main {
         left: -2.5rem;
     }
 
+    /* Arrow container */
     .overlay-arrow-container {
         border-radius: 3rem;
         padding: 1.5rem 1.8rem;
@@ -801,6 +826,7 @@ main {
         filter: brightness(0) saturate(100%) invert(63%) sepia(98%) saturate(2737%) hue-rotate(345deg) brightness(99%) contrast(105%);
     }
 
+    /* Desktop thumbnails row */
     .desktop-thumbnails-row,
     .overlay-thumbnails-row {
         display: flex;
@@ -849,6 +875,7 @@ main {
         font-size: 4rem;
     }
 
+    /* Price container */
     .price-container {
         flex-direction: column;
         align-items: flex-start;
@@ -858,11 +885,13 @@ main {
         margin-bottom: .8rem;
     }
 
+    /* Input and button container */
     .input-and-button-container {
         display: flex;
         gap: 1.3rem;
     }
 
+    /* Input container */
     .input-container {
         margin-bottom: 0;
     }
