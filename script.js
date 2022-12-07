@@ -1,32 +1,43 @@
 'use strict';
 
-let arrowContainer = document.querySelectorAll('.arrow-container');
-let buttonPage = document.querySelector('.button-page');
-let cartContainer = document.querySelector('.cart-container');
-let cartItemsAndButtonContainer = document.querySelector('.cart-items-and-button-container');
-let cartPrice = document.querySelector('.cart-price');
+
+
+
+
+
+
+
+
+
+
+
+let arrowContainer = document.querySelectorAll('.main__images-container__display-image-container__two-arrows__arrow');
+let buttonPage = document.querySelector('.main__text-container__input-and-button-container__button-container');
+let cartContainer = document.querySelector('.header__cart-container');
+let cartItemsAndButtonContainer = document.querySelector('.header__cart-container__cart-bottom__cart-items-and-button');
+let cartPrice = document.querySelector('.header__cart-container__cart-bottom__cart-items-and-button__cart-items__thumbnail-and-text__text__price');
 let desktopDisplayed = document.querySelector('.desktop-displayed');
 let desktopOverlay = document.querySelector('.desktop-overlay');
-let desktopThumbnailsRowImg = document.querySelectorAll('.desktop-thumbnails-row-img');
-let emptyTextContainer = document.querySelector('.empty-text-container');
-let iconCartHeader = document.querySelector('.icon-cart-header');
-let iconCartHeaderNumber = document.querySelector('.icon-cart-header-number');
-let iconDelete = document.querySelector('.icon-delete');
-let iconMenu = document.querySelector('.icon-menu');
+let desktopThumbnailsRowImg = document.querySelectorAll('.main__images-container__thumbnails-row__thumbnail__img');
+let emptyTextContainer = document.querySelector('.header__cart-container__cart-bottom__empty-text-container');
+let iconCartHeader = document.querySelector('.header__cart-and-avatar-container__cart__img');
+let iconCartHeaderNumber = document.querySelector('.header__cart-and-avatar-container__cart__span');
+let iconDelete = document.querySelector('.header__cart-container__cart-bottom__cart-items-and-button__cart-items__icon-delete');
+let iconMenu = document.querySelector('.header__logo-and-nav-container__icon-menu');
 let iconMinus = document.querySelector('.icon-minus');
 let iconPlus = document.querySelector('.icon-plus');
-let imageDisplayed = document.querySelector('.image-displayed');
-let input = document.querySelector('.input-num-of-shoes');
-let logo = document.querySelector('.logo');
-let mathSymbol = document.querySelector('.math-symbol');
+let imageDisplayed = document.querySelector('.main__images-container__display-image-container__image-displayed');
+let input = document.querySelector('.main__text-container__input-and-button-container__input-container__input');
+let logo = document.querySelector('.header__logo-and-nav-container__logo');
+let mathSymbol = document.querySelector('.main__text-container__input-and-button-container__input-container__math-symbol');
 let mobileOverlay = document.querySelector('.mobile-overlay');
-let nav = document.querySelector('.nav');
-let navIconClose = document.querySelector('.nav-icon-close');
-let overlayArrowContainer = document.querySelectorAll('.overlay-arrow-container')
-let overlayDisplayed = document.querySelector('.overlay-displayed');
-let overlayIconClose = document.querySelector('.overlay-icon-close');
-let overlayImagesContainer = document.querySelector('.overlay-images-container');
-let overlayThumbnailsRowImg = document.querySelectorAll('.overlay-thumbnails-row-img');
+let nav = document.querySelector('.header__logo-and-nav-container__nav');
+let navIconClose = document.querySelector('.header__logo-and-nav-container__nav__icon-close');
+let overlayArrowContainer = document.querySelectorAll('.desktop-overlay__images-container__display-images-container__arrows-container__arrow')
+let overlayDisplayed = document.querySelector('.desktop-overlay__images-container__display-images-container__displayed-img');
+let overlayIconClose = document.querySelector('.desktop-overlay__images-container__display-images-container__icon-close');
+let overlayImagesContainer = document.querySelector('.desktop-overlay__images-container');
+let overlayThumbnailsRowImg = document.querySelectorAll('.desktop-overlay__images-container__display-images-container__thumbnails-row__img');
 let total = document.querySelector('.total');
 
 
