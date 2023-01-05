@@ -1,16 +1,6 @@
 'use strict';
 
 
-
-
-
-
-
-
-
-
-
-
 let arrowContainer = document.querySelectorAll('.main__images-container__display-image-container__two-arrows__arrow');
 let buttonPage = document.querySelector('.main__text-container__input-and-button-container__button-container');
 let cartContainer = document.querySelector('.header__cart-container');
